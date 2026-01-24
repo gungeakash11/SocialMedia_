@@ -31,5 +31,9 @@ def upgrade() -> None:
 
 
 def downgrade() -> None:
+<<<<<<< HEAD
     op.drop_table('users', if_exists=True)  
+=======
+    op.drop_table('user', if_exists=True)  
+>>>>>>> c2fd548 (initial commit)
     pass
