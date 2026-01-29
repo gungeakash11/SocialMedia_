@@ -45,7 +45,6 @@ class PostOut(BaseModel):
 class UserCreate(BaseModel):
     email: EmailStr
     password: str
-    phone_number: Optional[str] = None
     model_config = {"from_attributes": True}
 
 
