@@ -18,7 +18,6 @@ class UserOut(BaseModel):
     id: int
     email: EmailStr
     created_at: datetime
-    phone_number: Optional[str] = None
     model_config = {"from_attributes": True}
 
 class UserLogin(BaseModel):
