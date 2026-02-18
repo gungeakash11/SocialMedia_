@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
  
-# models.Base.metadata.create_all(bind=engine) -> we are using alembic for migrations so this line(Engine) is not needed anymore.
+#models.Base.metadata.create_all(bind=engine) #-> we are using alembic for migrations so this line(Engine) is not needed anymore.
 
 app = FastAPI()
 """Below Code is for CORS policy handling, allowing all origins to access the API. make changes in var 'origins' to restrict access."""
