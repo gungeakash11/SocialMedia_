@@ -36,6 +36,4 @@ def get_user(id:int, db: Session = Depends(get_db)):
 @router.get("/", response_model = list[schemas.UserOut])
 def get_all_users(db: Session = Depends(get_db)):
     users = db.query(models.User).all()
-    print(users, "Fetched all users")
-    
     return users
