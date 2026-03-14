@@ -1,4 +1,9 @@
 from fastapi import FastAPI
+"""
+Root endpoint for the FastAPI application.
+Returns:
+    dict: A welcome message indicating the API is running.
+"""
  #, Response, status, HTTPException, Depends
 from . import models #, schemas, utils
 from .database import engine #, get_db
