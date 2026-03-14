@@ -4,6 +4,7 @@ from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
 from typing import Optional
 
+# Base schema containing common post fields (title, content, published status)
 class PostBase(BaseModel):
     """Base Pydantic schema for post data.
     
@@ -20,6 +21,7 @@ class PostBase(BaseModel):
     
 
 
+# Schema for creating a new post request
 class PostCreate(PostBase):
     """Pydantic schema for creating a new post.
     
@@ -28,6 +30,7 @@ class PostCreate(PostBase):
     """
     pass
 
+# Schema for returning user information in responses (excludes password)
 class UserOut(BaseModel):
     """Pydantic schema for user response data.
     
@@ -44,6 +47,7 @@ class UserOut(BaseModel):
     created_at: datetime
     model_config = {"from_attributes": True}
 
+# Schema for user login request (email & password)
 class UserLogin(BaseModel):
     """Pydantic schema for user login requests.
     
@@ -57,6 +61,7 @@ class UserLogin(BaseModel):
     password: str
     model_config = {"from_attributes": True}
 
+# Complete post schema including post details and owner information
 class Post(PostBase):
     """Complete Pydantic schema for a post with owner information.
     
@@ -76,6 +81,7 @@ class Post(PostBase):
 
     model_config = {"from_attributes": True}
 
+# Schema for post response with vote count aggregation
 class PostOut(BaseModel):
     """Pydantic schema for post response with vote count aggregation.
     
@@ -91,6 +97,7 @@ class PostOut(BaseModel):
     model_config = {"from_attributes": True}
 
 
+# Schema for user registration request (email & password)
 class UserCreate(BaseModel):
     """Pydantic schema for user registration requests.
     
@@ -105,6 +112,7 @@ class UserCreate(BaseModel):
     model_config = {"from_attributes": True}
 
 
+# Schema for vote request (post_id & direction: 1=upvote, 0=remove)
 class Vote(BaseModel):
     """Pydantic schema for vote requests.
     
@@ -118,6 +126,7 @@ class Vote(BaseModel):
     dir: int = Field(le=1)
 
 
+# Schema for OAuth2 token response containing JWT and token type
 class Token(BaseModel):
     """Pydantic schema for OAuth2 token response.
     
@@ -131,6 +140,7 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
+# Schema for JWT token payload containing user ID
 class TokenData(BaseModel):
     """Pydantic schema for JWT token payload data.
     
