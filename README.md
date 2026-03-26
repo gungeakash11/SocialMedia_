@@ -191,9 +191,12 @@ gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker -
 
 ### Access the Application
 
+**Development (Local):**
 - **API**: http://localhost:8000
 - **Interactive Docs (Swagger UI)**: http://localhost:8000/docs
 - **Alternative Docs (ReDoc)**: http://localhost:8000/redoc
+
+**Production:** Coming soon (domain pending)
 
 ---
 
@@ -390,7 +393,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Akash Gunge**
 - GitHub: [@gungeakash11](https://github.com/gungeakash11)
-- Email: your.email@example.com
+- Email: gungeakash11@gmail.com
 
 ---
 
